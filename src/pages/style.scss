@@ -1,0 +1,19 @@
+.context {
+  height: 100vh;
+  height: 100%;
+}
+
+.bg_img {
+  object-fit: contain;
+  width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  align-items: center;
+}
+
+.button_container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
