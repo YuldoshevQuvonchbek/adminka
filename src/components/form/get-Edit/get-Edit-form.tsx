@@ -37,7 +37,7 @@ const GetEditForm: React.FC<Props> = ({ onFinish, initialValues, loading }) => {
 
   return (
     <Form
-      name="wrap"
+      name="GetEditForm"
       layout="vertical"
       colon={false}
       style={{ maxWidth: 600 }}

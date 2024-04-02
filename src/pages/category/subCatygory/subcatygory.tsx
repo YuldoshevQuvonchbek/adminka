@@ -11,7 +11,6 @@ import { useSubDelete } from "./service/mutation/useSubDelete";
 
 const Subcatygory = () => {
   const { data, isLoading } = useGetSubCatygory();
-  console.log(data);
 
   const [deletestate, setDeletestate] = useState<number[]>([]);
   const { mutate, isPending } = useSubDelete();

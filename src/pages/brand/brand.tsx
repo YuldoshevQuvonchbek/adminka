@@ -8,7 +8,6 @@ import "../style.scss";
 const Brand = () => {
   const navigete = useNavigate();
   const { data, isLoading } = useGetBrand();
-  console.log(data);
 
   const [deletestate, setDeletestate] = useState<number[]>([]);
   const Deletenotify = () => message.success("Brand o'chirildi");

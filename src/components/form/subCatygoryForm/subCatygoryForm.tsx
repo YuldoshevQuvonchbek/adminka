@@ -70,9 +70,10 @@ const SubCatygoryForm: React.FC<Props> = ({
       <Form.Item
         label="Bulimni tanlang"
         name={"parent"}
+        initialValue={"Bulimni tanlang"}
         rules={[{ required: true, message: "Brand tanlashni unuttingiz !!" }]}
       >
-        <Select defaultValue={"Bulimni tanlang"} options={selectMapdata} />
+        <Select options={selectMapdata} />
       </Form.Item>
       <Form.Item
         name="title"

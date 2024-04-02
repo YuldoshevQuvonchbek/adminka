@@ -4,13 +4,13 @@ import { dataType } from "../../create-catygory/create-catygory";
 import { useGetProduct } from "./service/mutation/useGetProduct";
 import { useNavigate } from "react-router-dom";
 import { useGetCatygorySub } from "./service/mutation/useGetKreateProduct";
+interface selectMapDataType {
+  value: number;
+  label: JSX.Element;
+}
 const SubCatygoryCreate = () => {
-  interface selectMapDataType {
-    value: number;
-    label: JSX.Element;
-  }
   const navigete = useNavigate();
-  const { data: selactData } = useGetProduct();
+  const { data } = useGetProduct();
   const { mutate, reset, isPending } = useGetCatygorySub();
   const onFinish = (values: dataType) => {
     const dataform = new FormData();
@@ -18,7 +18,6 @@ const SubCatygoryCreate = () => {
     if (values.image) dataform.append("image", values.image.file);
     if (values.parent) {
       dataform.append("parent", String(values.parent));
-      console.log(values.parent);
     }
 
     mutate(dataform, {
@@ -29,13 +28,11 @@ const SubCatygoryCreate = () => {
       },
     });
   };
-  console.log(selactData);
 
-  const selectMapdata = selactData?.results.map<selectMapDataType>((item) => ({
+  const selectMapdata = data?.results.map<selectMapDataType>((item) => ({
     value: item.id,
     label: <span>{item.title}</span>,
   }));
-  console.log(selectMapdata);
 
   return (
     <div>
