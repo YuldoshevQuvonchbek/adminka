@@ -67,11 +67,16 @@ const MainLayout: React.FC = () => {
               },
               {
                 key: "5",
+                icon: <DatabaseOutlined />,
+                label: <NavLink to={"/home/subAttribute"}>Atrebute</NavLink>,
+              },
+              {
+                key: "6",
                 icon: <UserOutlined />,
                 label: <NavLink to={"/home/User"}>User</NavLink>,
               },
               {
-                key: "6",
+                key: "7",
                 icon: <LoginOutlined />,
                 label: <NavLink to={"/home"}>Log out</NavLink>,
               },

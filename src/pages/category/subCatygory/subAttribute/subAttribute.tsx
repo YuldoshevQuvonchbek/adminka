@@ -1,19 +1,16 @@
-import {
-  DeleteOutlined,
-  EditOutlined,
-  PlusCircleOutlined,
-} from "@ant-design/icons";
-import { Button, Image, Popconfirm, Spin, Table, message } from "antd";
-import { useGetSubCatygory } from "./service/query/useGetSubCatygory";
+import { DeleteOutlined, EditOutlined } from "@ant-design/icons";
+import { Button, Popconfirm, Spin, Table, message } from "antd";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { useState } from "react";
-import { useSubDelete } from "./service/mutation/useSubDelete";
+import { useGetAtrebute } from "./service/query/useGetAtrebute";
 import { useNavigate } from "react-router-dom";
-const Subcatygory = () => {
+import { useAtrebuteDelete } from "./service/mutation/useAtrebuteDelete";
+
+const SubAttribute: React.FC = () => {
   const navigete = useNavigate();
-  const { data, isLoading } = useGetSubCatygory();
+  const { data, isLoading } = useGetAtrebute();
   const [deletestate, setDeletestate] = useState<number[]>([]);
-  const { mutate, isPending } = useSubDelete();
+  const { mutate, isPending } = useAtrebuteDelete();
   const Deletenotify = () => message.success("Malumot o'chirildi");
   const del = (id: number) => {
     mutate(id, {
@@ -26,18 +23,10 @@ const Subcatygory = () => {
   const edit = (id: number) => {
     navigete(`/home/ediCatygory/${id}`);
   };
-
   const columns = [
     { title: "ID", dataIndex: "id", key: "id" },
     { title: "Name", dataIndex: "title", key: "title" },
-    {
-      title: "Image",
-      dataIndex: "image",
-      key: "image",
-      render: (data: string) => {
-        return <Image src={data} style={{ width: 70 }} />;
-      },
-    },
+
     {
       title: "Create",
       dataIndex: "",
@@ -70,21 +59,18 @@ const Subcatygory = () => {
     title: item.title,
     id: item.id,
     key: item.id,
-    image: item.image,
   }));
   const fillterData = product
     ? product.filter((item: any) => !deletestate.includes(item.id))
     : [];
-
   return (
     <>
       {isLoading || isPending ? (
         <Spin fullscreen size="large" />
       ) : (
         <>
-          <Link to={"/home/subCatygoryCreate"}>
+          <Link to={"/home/createCatygory"}>
             <Button type="primary" style={{ marginBottom: 16 }}>
-              <PlusCircleOutlined />
               Create
             </Button>
           </Link>
@@ -95,4 +81,4 @@ const Subcatygory = () => {
   );
 };
 
-export default Subcatygory;
+export default SubAttribute;

@@ -13,6 +13,7 @@ import BrandCrate from "./pages/brand/brand-Create/brand-Crate";
 import BandEdit from "./pages/brand/brand-edit/brandEdit";
 import { UseSkror } from "./hook/useSkror";
 import SubCatygoryCreate from "./pages/category/subCatygory/subCatygoryCreate/subCatygoryCreate";
+import SubAttribute from "./pages/category/subCatygory/subAttribute/subAttribute";
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
           <Route path="brandCrate" element={<BrandCrate />} />
           <Route path="bandEdit/:id" element={<BandEdit />} />
           <Route path="subCatygoryCreate" element={<SubCatygoryCreate />} />
+          <Route path="subAttribute" element={<SubAttribute />} />
         </Route>
       </Routes>
     </>

@@ -1,4 +1,5 @@
 import { ArrowDownOutlined } from "@ant-design/icons";
+import React, { useState } from "react";
 import {
   Button,
   Form,
@@ -9,8 +10,6 @@ import {
   UploadFile,
   UploadProps,
 } from "antd";
-
-import React, { useState } from "react";
 
 interface dataType {
   title: string;
