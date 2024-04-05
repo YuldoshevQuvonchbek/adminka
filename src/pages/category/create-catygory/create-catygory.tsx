@@ -37,11 +37,10 @@ const CreateCategory: React.FC = () => {
 
   const onFinish = (values: dataType) => {
     const dataform = new FormData();
-    dataform.append("title", values.title);
-    if (values.image) dataform.append("image", values.image.file);
-    if (values.parent) {
-      dataform.append("parent", "");
-    }
+    dataform.append("title", title);
+    if (image) dataform.append("image", image.file);
+    if (parent) dataform.append("parent", parent.id);
+
     mutate(dataform, {
       onSuccess: (res) => {
         message.success("Malumot qushildi");
