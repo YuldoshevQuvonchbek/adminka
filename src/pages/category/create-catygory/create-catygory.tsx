@@ -35,29 +35,29 @@ const CreateCategory: React.FC = () => {
 
   const { mutate, reset, isPending } = useGetKreateProduct();
 
-  const onFinish = (values: dataType) => {
+  const onFinish = ({ title, image }: dataType) => {
     const dataform = new FormData();
     dataform.append("title", title);
     if (image) dataform.append("image", image.file);
-    if (parent) dataform.append("parent", parent.id);
+    if (parent) dataform.append("parent", "");
 
     mutate(dataform, {
       onSuccess: (res) => {
         message.success("Malumot qushildi");
         reset();
         setSubmit(true);
-        setsubIdState(String(res));
+        setsubIdState(String(res.data?.id));
       },
     });
   };
 
   const onFinishSub = (values: dataType) => {
-    const dataform = new FormData();
-    dataform.append("title", values.title);
-    dataform.append("parent", subIdState);
-    if (values.image) dataform.append("image", values.image.file);
+    const dataformSub = new FormData();
+    dataformSub.append("title", values.title);
+    dataformSub.append("parent", subIdState);
+    if (values.image) dataformSub.append("image", values.image.file);
 
-    mutate(dataform, {
+    mutate(dataformSub, {
       onSuccess: () => {
         message.success("Malumot qushildi");
         naviget("/home/catygoryList");

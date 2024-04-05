@@ -4,6 +4,11 @@ import { request } from "../../../../../config/request";
 interface type {
   title: string;
   image?: string;
+  children: {
+    title: string;
+    image?: string;
+    id: string;
+  }[];
 }
 export const useGetEditCatygory = (id: string) => {
   return useQuery({

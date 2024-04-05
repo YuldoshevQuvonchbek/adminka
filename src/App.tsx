@@ -14,7 +14,6 @@ import BandEdit from "./pages/brand/brand-edit/brandEdit";
 import { UseSkror } from "./hook/useSkror";
 import SubCatygoryCreate from "./pages/category/subCatygory/subCatygoryCreate/subCatygoryCreate";
 import SubAttribute from "./pages/category/subCatygory/subAttribute/subAttribute";
-import SubcatygoryEdit from "./pages/category/edit-cotygory/edit-sub-catygory/edit-sub-catygory";
 
 function App() {
   return (
@@ -35,7 +34,6 @@ function App() {
           <Route path="bandEdit/:id" element={<BandEdit />} />
           <Route path="subCatygoryCreate" element={<SubCatygoryCreate />} />
           <Route path="subAttribute" element={<SubAttribute />} />
-          <Route path="subcatygoryEdit" element={<SubcatygoryEdit />} />
         </Route>
       </Routes>
     </>
