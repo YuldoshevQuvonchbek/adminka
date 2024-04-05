@@ -28,6 +28,12 @@ export interface FildTypeCategory {
     id: string;
     title: string;
   };
+  data: {
+    id: string;
+    title: string;
+    image: string;
+    parent: number;
+  };
 }
 
 const GetEditForm: React.FC<Props> = ({ onFinish, initialValues, loading }) => {
@@ -77,7 +83,12 @@ const GetEditForm: React.FC<Props> = ({ onFinish, initialValues, loading }) => {
       </Form.Item>
       {initialValues && !fileList.length && <Image src={initialValues.image} />}
       <Form.Item>
-        <Button loading={loading} type="primary" htmlType="submit">
+        <Button
+          style={{ margin: 20 }}
+          loading={loading}
+          type="primary"
+          htmlType="submit"
+        >
           Submit
         </Button>
       </Form.Item>

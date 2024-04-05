@@ -4,8 +4,7 @@ import type { TabsProps } from "antd";
 import { message } from "antd";
 import { useGetKreateProduct } from "./service/mutation/useGetKreateProduct";
 import GetEditForm from "../../../components/form/get-Edit/get-Edit-form";
-import SubCatygoryCreate from "../subCatygory/subCatygoryCreate/subCatygoryCreate";
-
+import { useNavigate } from "react-router-dom";
 const onChange = (key: string) => {
   console.log(key);
 };
@@ -19,9 +18,17 @@ export interface dataType {
     id: string;
     title: string;
   };
+  data?: {
+    id: string;
+    title: string;
+    image?: string;
+    parent?: number;
+  };
 }
 
 const CreateCategory: React.FC = () => {
+  const naviget = useNavigate();
+  const [subIdState, setsubIdState] = useState("");
   const [active, setActive] = useState("1");
   const [submit, setSubmit] = useState(false);
   const [decable, setDesable] = useState(true);
@@ -33,13 +40,29 @@ const CreateCategory: React.FC = () => {
     dataform.append("title", values.title);
     if (values.image) dataform.append("image", values.image.file);
     if (values.parent) {
-      dataform.append("parent", String(values.parent));
+      dataform.append("parent", "");
     }
     mutate(dataform, {
-      onSuccess: () => {
+      onSuccess: (res) => {
         message.success("Malumot qushildi");
         reset();
         setSubmit(true);
+        setsubIdState(String(res));
+      },
+    });
+  };
+
+  const onFinishSub = (values: dataType) => {
+    const dataform = new FormData();
+    dataform.append("title", values.title);
+    dataform.append("parent", subIdState);
+    if (values.image) dataform.append("image", values.image.file);
+
+    mutate(dataform, {
+      onSuccess: () => {
+        message.success("Malumot qushildi");
+        naviget("/home/catygoryList");
+        reset();
       },
     });
   };
@@ -53,7 +76,7 @@ const CreateCategory: React.FC = () => {
     {
       key: "2",
       label: "Sub catygory yaratish",
-      children: <SubCatygoryCreate />,
+      children: <GetEditForm loading={isPending} onFinish={onFinishSub} />,
       disabled: decable,
     },
   ];

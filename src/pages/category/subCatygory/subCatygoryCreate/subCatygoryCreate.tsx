@@ -54,6 +54,7 @@ const SubCatygoryCreate = () => {
         />
       ),
     },
+
     {
       key: "2",
       label: "Attribuate yaratish",

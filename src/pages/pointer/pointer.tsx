@@ -7,15 +7,17 @@ import { useGetProduct } from "../service/query/useGetProduct";
 import { useGetSubCatygory } from "../category/subCatygory/service/query/useGetSubCatygory";
 import { useGetBrand } from "../brand/service/query/useGetBrand";
 import { Link } from "react-router-dom";
+import { useGetAtrebute } from "../category/subCatygory/subAttribute/service/query/useGetAtrebute";
 const Pointer: React.FC = () => {
   const { data, isLoading } = useGetProduct();
   const { data: subData, isLoading: subLoding } = useGetSubCatygory();
   const { data: brantData, isLoading: BrandLoding } = useGetBrand();
+  const { data: AtrebutData, isLoading: atrebutLoding } = useGetAtrebute();
   console.log(data);
 
   return (
     <>
-      {isLoading || subLoding || BrandLoding ? (
+      {isLoading || subLoding || BrandLoding || atrebutLoding ? (
         <Spin fullscreen size="large" />
       ) : (
         <div>
@@ -52,6 +54,18 @@ const Pointer: React.FC = () => {
                       title="All Brand"
                       value={brantData?.count}
                       valueStyle={{ color: "#cfdb31" }}
+                      prefix={<UnorderedListOutlined />}
+                    />
+                  </Card>
+                </Link>
+              </Col>
+              <Col span={12}>
+                <Link to={"/home/subAttribute"}>
+                  <Card bordered={false}>
+                    <Statistic
+                      title="All Brand"
+                      value={AtrebutData?.count}
+                      valueStyle={{ color: "#2956b0" }}
                       prefix={<UnorderedListOutlined />}
                     />
                   </Card>

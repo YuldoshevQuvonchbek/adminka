@@ -21,7 +21,7 @@ interface dataType {
     title: string;
   };
 }
-interface Props {
+export interface Props {
   onFinish: (values: dataType) => void;
   loading: boolean;
   initialValues?: {
