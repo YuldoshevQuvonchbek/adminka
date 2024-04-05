@@ -13,7 +13,6 @@ const Pointer: React.FC = () => {
   const { data: subData, isLoading: subLoding } = useGetSubCatygory();
   const { data: brantData, isLoading: BrandLoding } = useGetBrand();
   const { data: AtrebutData, isLoading: atrebutLoding } = useGetAtrebute();
-  console.log(data);
 
   return (
     <>

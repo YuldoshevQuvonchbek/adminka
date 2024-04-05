@@ -11,7 +11,16 @@ export interface dataType {
   image?: {
     file: File;
   };
-  parent?: number;
+  parent?: {
+    id: string;
+    title: string;
+  };
+  data?: {
+    id: string;
+    title: string;
+    image?: string;
+    parent?: number;
+  };
 }
 
 const BrandCrate = () => {
