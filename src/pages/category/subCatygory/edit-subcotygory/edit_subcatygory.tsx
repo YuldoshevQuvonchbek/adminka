@@ -12,7 +12,7 @@ export interface imgeObject {
   fileList: File[];
 }
 
-const EdiCatygory = () => {
+const EditSubcatygory = () => {
   const naviget = useNavigate();
   const { id } = useParams<{ id: string }>();
   const { mutate } = useEditCatygory(id);
@@ -50,4 +50,4 @@ const EdiCatygory = () => {
   );
 };
 
-export default EdiCatygory;
+export default EditSubcatygory;

@@ -24,7 +24,7 @@ const Subcatygory = () => {
     });
   };
   const edit = (id: number) => {
-    navigete(`/home/ediCatygory/${id}`);
+    navigete(`/home/editSubcatygory/${id}`);
   };
 
   const columns = [

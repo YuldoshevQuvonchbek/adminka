@@ -84,7 +84,7 @@ const EdiCatygory = () => {
     });
   };
   const edit = (id: number) => {
-    naviget(`/home/ediCatygory/${id}`);
+    naviget(`/home/editSubcatygory/${id}`);
   };
 
   const columns: TableProps<typeColumn>["columns"] = [
@@ -141,7 +141,7 @@ const EdiCatygory = () => {
     },
     {
       key: "2",
-      label: "Sub catygory yangiash",
+      label: "Sub catygory yangilash",
       children: (
         <Table columns={columns as typeColumn[]} dataSource={fillterData} />
       ),

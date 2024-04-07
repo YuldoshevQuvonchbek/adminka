@@ -64,7 +64,7 @@ const EditProduct = () => {
   return (
     <>
       {isLoading ? (
-        <Spin size="large" />
+        <Spin fullscreen size="large" />
       ) : (
         <ProductForm
           selectMapdata={selectMapdata}

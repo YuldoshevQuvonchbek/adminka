@@ -17,6 +17,7 @@ import SubAttribute from "./pages/category/subCatygory/subAttribute/subAttribute
 import ProductCreate from "./pages/product/productCreate/productCreate";
 import ProductList from "./pages/product/productList/productList";
 import EditProduct from "./pages/product/productEdit/edit-Product";
+import EditSubcatygory from "./pages/category/subCatygory/edit-subcotygory/edit_subcatygory";
 
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
           <Route path="createCatygory" element={<CreateCategory />} />
           <Route path="ediCatygory/:id" element={<EdiCatygory />} />
           <Route path="brand" element={<Brand />} />
+          <Route path="editSubcatygory/:id" element={<EditSubcatygory />} />
           <Route path="brandCrate" element={<BrandCrate />} />
           <Route path="bandEdit/:id" element={<BandEdit />} />
           <Route path="subCatygoryCreate" element={<SubCatygoryCreate />} />
