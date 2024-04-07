@@ -68,7 +68,7 @@ const SubCatygoryForm: React.FC<Props> = ({
     >
       <Form.Item
         label="Bulimni tanlang"
-        name={"parent"}
+        name={"category"}
         initialValue={"Bulimni tanlang"}
         rules={[{ required: true, message: "Brand tanlashni unuttingiz !!" }]}
       >

@@ -3,6 +3,8 @@ import "./style.scss";
 import {
   BarChartOutlined,
   DatabaseOutlined,
+  DeploymentUnitOutlined,
+  ForkOutlined,
   LoginOutlined,
   MenuFoldOutlined,
   MenuUnfoldOutlined,
@@ -67,16 +69,21 @@ const MainLayout: React.FC = () => {
               },
               {
                 key: "5",
-                icon: <DatabaseOutlined />,
+                icon: <ForkOutlined />,
                 label: <NavLink to={"/home/subAttribute"}>Atrebute</NavLink>,
               },
               {
                 key: "6",
+                icon: <DeploymentUnitOutlined />,
+                label: <NavLink to={"/home/ProductList"}>Product</NavLink>,
+              },
+              {
+                key: "7",
                 icon: <UserOutlined />,
                 label: <NavLink to={"/home/User"}>User</NavLink>,
               },
               {
-                key: "7",
+                key: "8",
                 icon: <LoginOutlined />,
                 label: <NavLink to={"/home"}>Log out</NavLink>,
               },
