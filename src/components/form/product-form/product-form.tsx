@@ -17,6 +17,7 @@ interface Props {
   onFinish: (values: FildTypeProduct) => void;
   loading: boolean;
   initialValues?: {
+    id?: number;
     title?: string;
     image?: string | undefined;
     price?: number | undefined;
@@ -31,6 +32,19 @@ interface Props {
 }
 
 export interface FildTypeProduct {
+  id: number;
+  image: {
+    file: File;
+    fileList: FileList;
+  };
+  title: string;
+  price: number;
+  is_available: boolean;
+  category: {
+    id: number;
+    name: string;
+  };
+  is_new: boolean;
   results: {
     id: number;
     image?: {
@@ -68,11 +82,17 @@ const ProductForm: React.FC<Props> = ({
       {...formItemLayout}
       onFinish={onFinish}
       layout="vertical"
-      initialValues={{ title: initialValues?.title }}
+      initialValues={{
+        title: initialValues?.title,
+        price: initialValues?.price,
+        is_new: initialValues?.is_new,
+        is_available: initialValues?.is_available,
+        category: initialValues?.category,
+      }}
       style={{ maxWidth: 600 }}
     >
       <Form.Item
-        name="select"
+        name="category"
         label="Select"
         hasFeedback
         rules={[{ required: true, message: "Catygoryni tanlang !" }]}
@@ -127,7 +147,9 @@ const ProductForm: React.FC<Props> = ({
           </button>
         </Upload.Dragger>
       </Form.Item>
-      {initialValues && !fileList.length && <Image src={initialValues.image} />}
+      {initialValues && !fileList.length && (
+        <Image style={{ width: 200 }} src={initialValues.image} />
+      )}
 
       <Form.Item wrapperCol={{ span: 12, offset: 6 }}>
         <Space>

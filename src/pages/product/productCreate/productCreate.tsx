@@ -40,14 +40,12 @@ const ProductCreate = () => {
     is_new,
     price,
   }: productCreateDataType) => {
-    console.log(category);
-
     const dataform = new FormData();
     dataform.append("title", title);
     dataform.append("price", price ? String(price) : "0");
     dataform.append("is_new", is_new ? "true" : "false");
     dataform.append("is_available", is_available ? "true" : "false");
-    dataform.append("category", 1809);
+    dataform.append("category", String(category));
     if (image) dataform.append("image", image.file);
 
     mutate(dataform, {

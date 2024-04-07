@@ -9,7 +9,6 @@ import { useProductDelete } from "../service/mutation/useProductDelete";
 const ProductList: React.FC = () => {
   const navigete = useNavigate();
   const { data, isLoading } = useGetProductData();
-  console.log(data);
 
   const [deletestate, setDeletestate] = useState<number[]>([]);
   const { mutate, isPending } = useProductDelete();
@@ -24,7 +23,7 @@ const ProductList: React.FC = () => {
     });
   };
   const edit = (id: number) => {
-    navigete(`/home/ediCatygory/${id}`);
+    navigete(`/home/editProduct/${id}`);
   };
 
   const columns = [

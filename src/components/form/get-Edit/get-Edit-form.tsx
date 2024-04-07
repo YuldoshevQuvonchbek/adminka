@@ -81,7 +81,9 @@ const GetEditForm: React.FC<Props> = ({ onFinish, initialValues, loading }) => {
           </button>
         </Upload.Dragger>
       </Form.Item>
-      {initialValues && !fileList.length && <Image src={initialValues.image} />}
+      {initialValues && !fileList.length && (
+        <Image style={{ width: 200 }} src={initialValues.image} />
+      )}
       <Form.Item>
         <Button
           style={{ margin: 20 }}

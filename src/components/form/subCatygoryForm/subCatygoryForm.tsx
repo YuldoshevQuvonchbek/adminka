@@ -68,7 +68,7 @@ const SubCatygoryForm: React.FC<Props> = ({
     >
       <Form.Item
         label="Bulimni tanlang"
-        name={"category"}
+        name={"parent"}
         initialValue={"Bulimni tanlang"}
         rules={[{ required: true, message: "Brand tanlashni unuttingiz !!" }]}
       >
@@ -104,7 +104,9 @@ const SubCatygoryForm: React.FC<Props> = ({
           </button>
         </Upload.Dragger>
       </Form.Item>
-      {initialValues && !fileList.length && <Image src={initialValues.image} />}
+      {initialValues && !fileList.length && (
+        <Image style={{ width: 200 }} src={initialValues.image} />
+      )}
       <Form.Item>
         <Button loading={loading} type="primary" htmlType="submit">
           Submit
