@@ -30,7 +30,7 @@ const BandEdit = () => {
   return (
     <>
       {isLoading ? (
-        <Spin size="large" />
+        <Spin fullscreen size="large" />
       ) : (
         <GetEditForm
           loading={isPending}

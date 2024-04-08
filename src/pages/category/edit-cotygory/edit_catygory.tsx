@@ -150,7 +150,7 @@ const EdiCatygory = () => {
   return (
     <>
       {isLoading || subloding ? (
-        <Spin size="large" />
+        <Spin fullscreen size="large" />
       ) : (
         <Tabs defaultActiveKey="1" items={items} onChange={onChange} />
       )}
