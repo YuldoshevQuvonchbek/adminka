@@ -10,6 +10,7 @@ import {
   MenuUnfoldOutlined,
   OrderedListOutlined,
   PicLeftOutlined,
+  PictureOutlined,
   SmileOutlined,
   UserOutlined,
 } from "@ant-design/icons";
@@ -79,11 +80,16 @@ const MainLayout: React.FC = () => {
               },
               {
                 key: "7",
+                icon: <PictureOutlined />,
+                label: <NavLink to={"/home/bannerList"}>Banner</NavLink>,
+              },
+              {
+                key: "8",
                 icon: <UserOutlined />,
                 label: <NavLink to={"/home/User"}>User</NavLink>,
               },
               {
-                key: "8",
+                key: "9",
                 icon: <LoginOutlined />,
                 label: <NavLink to={"/home"}>Log out</NavLink>,
               },

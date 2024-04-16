@@ -16,77 +16,96 @@ import ProductCreate from "../pages/product/productCreate/productCreate";
 import EditSubcatygory from "../pages/category/subCatygory/edit-subcotygory/edit_subcatygory";
 import EditProduct from "../pages/product/productEdit/edit-Product";
 import Notfaunt from "../pages/Notfaunt/Notfaunt";
-export const Main_pages = [
+import { routerType } from "./routerType";
+import BannerList from "../pages/banner/bannerList";
+import BannerEdit from "../pages/banner/banner-edit/BannerEdit";
+import BannerCreate from "../pages/banner/bannerCreate/banner-create";
+
+export const Main_pages: routerType[] = [
   {
-    component: <Login />,
+    component: Login,
     path: "login",
   },
   {
-    component: <Pointer />,
+    component: Pointer,
     path: "pointer",
   },
   {
-    component: <CatygoryList />,
+    component: CatygoryList,
     path: "catygoryList",
   },
   {
-    component: <Subcatygory />,
+    component: Subcatygory,
     path: "Subcatygory",
   },
   {
-    component: <User />,
+    component: User,
     path: "User",
   },
   {
-    component: <CreateProduct />,
+    component: CreateProduct,
     path: "createProduct",
   },
   {
-    component: <CreateCategory />,
+    component: CreateCategory,
     path: "createCategory",
   },
   {
-    component: <EdiCatygory />,
+    component: EdiCatygory,
     path: "ediCatygory/:id",
   },
   {
-    component: <EditSubcatygory />,
+    component: EditSubcatygory,
     path: "EditSubcatygory/:id",
   },
   {
-    component: <Brand />,
+    component: Brand,
     path: "brand",
   },
   {
-    component: <BrandCrate />,
+    component: BrandCrate,
     path: "brandCrate",
   },
   {
-    component: <BandEdit />,
+    component: BandEdit,
     path: "bandEdit/:id",
   },
   {
-    component: <SubCatygoryCreate />,
+    component: SubCatygoryCreate,
     path: "subCatygoryCreate",
   },
   {
-    component: <SubAttribute />,
+    component: SubAttribute,
     path: "subAttribute",
   },
   {
-    component: <ProductList />,
+    component: ProductList,
     path: "productList",
   },
   {
-    component: <ProductCreate />,
+    component: ProductCreate,
     path: "productCreate",
   },
   {
-    component: <EditProduct />,
+    component: EditProduct,
     path: "EditProduct/:id",
   },
   {
-    component: <Notfaunt />,
+    component: BannerList,
+    path: "bannerList",
+  },
+  {
+    component: BannerCreate,
+    path: "bannerCreate",
+  },
+
+  {
+    component: BannerEdit,
+    path: "bannerEdit/:id",
+  },
+
+  {
+    component: Notfaunt,
     path: "*",
   },
 ];

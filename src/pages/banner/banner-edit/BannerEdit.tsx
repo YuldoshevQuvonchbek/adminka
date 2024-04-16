@@ -3,14 +3,14 @@ import GetEditForm, {
   FildTypeCategory,
 } from "../../../components/form/get-Edit/get-Edit-form";
 import { useNavigate, useParams } from "react-router-dom";
-import { useEditBrand } from "./service/mutation/useEditBrand";
-import { useGetBrandEdit } from "./service/query/useGetBrandEdit";
+import { useEditBanner } from "../service/mutation/useEditBanner";
+import { useGetBannerEdit } from "../service/query/useGetBannerEdit";
 
-const BandEdit = () => {
+const BannerEdit = () => {
   const naviget = useNavigate();
   const { id } = useParams<{ id: string }>();
-  const { mutate, isPending } = useEditBrand(id);
-  const { data, isLoading } = useGetBrandEdit(id as string);
+  const { mutate, isPending } = useEditBanner(id);
+  const { data, isLoading } = useGetBannerEdit(id as string);
   const onFinish = (values: FildTypeCategory) => {
     const formObject = new FormData();
     formObject.append("title", values.title);
@@ -19,8 +19,8 @@ const BandEdit = () => {
     }
     mutate(formObject, {
       onSuccess: () => {
-        message.success("Brand Yangilandi :)");
-        naviget("/home/brand");
+        message.success("Banner Yangilandi :)");
+        naviget("/home/bannerList");
       },
       onError: () => {
         message.error("Hatolik :(");
@@ -42,4 +42,4 @@ const BandEdit = () => {
   );
 };
 
-export default BandEdit;
+export default BannerEdit;

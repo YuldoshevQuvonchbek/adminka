@@ -72,7 +72,7 @@ const CatygoryList: React.FC = () => {
   }));
 
   const fillterData = product
-    ? product.filter((item: any) => !deletestate.includes(item.id))
+    ? product.filter((item) => !deletestate.includes(item.id))
     : [];
   return (
     <>
@@ -80,7 +80,7 @@ const CatygoryList: React.FC = () => {
         <Spin fullscreen size="large" />
       ) : (
         <>
-          <Link to={"/home/createCatygory"}>
+          <Link to={"/home/createCategory"}>
             <Button type="primary" style={{ marginBottom: 16 }}>
               Create
             </Button>

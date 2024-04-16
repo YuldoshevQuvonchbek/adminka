@@ -2,7 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import { request } from "../../../../../config/request";
 
 interface CatigoryList {
-  id: Number;
+  id: number;
   title: string;
   image: string;
 }

@@ -1,8 +1,10 @@
 import { DeleteOutlined, EditOutlined } from "@ant-design/icons";
 import { Button, Popconfirm, Spin, Table, message } from "antd";
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import { useGetAtrebute } from "./service/query/useGetAtrebute";
+import {
+  DataTypeAtrebute,
+  useGetAtrebute,
+} from "./service/query/useGetAtrebute";
 import { useNavigate } from "react-router-dom";
 import { useAtrebuteDelete } from "./service/mutation/useAtrebuteDelete";
 
@@ -30,7 +32,7 @@ const SubAttribute: React.FC = () => {
     {
       title: "Create",
       dataIndex: "",
-      render: (_: number, data: any) => (
+      render: (_: number, data: DataTypeAtrebute) => (
         <div className="button_container">
           <Popconfirm
             onConfirm={() => edit(data.id)}
@@ -61,7 +63,7 @@ const SubAttribute: React.FC = () => {
     key: item.id,
   }));
   const fillterData = product
-    ? product.filter((item: any) => !deletestate.includes(item.id))
+    ? product.filter((item) => !deletestate.includes(item.id))
     : [];
   return (
     <>
@@ -69,11 +71,11 @@ const SubAttribute: React.FC = () => {
         <Spin fullscreen size="large" />
       ) : (
         <>
-          <Link to={"/home/createCatygory"}>
+          {/* <Link to={"/home/createCatygory"}>
             <Button type="primary" style={{ marginBottom: 16 }}>
               Create
             </Button>
-          </Link>
+          </Link> */}
           <Table columns={columns} dataSource={fillterData} />
         </>
       )}

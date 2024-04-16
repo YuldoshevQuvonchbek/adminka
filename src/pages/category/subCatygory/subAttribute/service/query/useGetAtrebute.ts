@@ -3,6 +3,7 @@ import { request } from "../../../../../../config/request";
 
 export interface DataTypeAtrebute {
   count: string;
+  id: number;
   previous: boolean;
   results: {
     id: number;

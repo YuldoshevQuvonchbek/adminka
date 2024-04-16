@@ -73,7 +73,7 @@ const Subcatygory = () => {
     image: item.image,
   }));
   const fillterData = product
-    ? product.filter((item: any) => !deletestate.includes(item.id))
+    ? product.filter((item) => !deletestate.includes(item.id))
     : [];
 
   return (

@@ -37,7 +37,7 @@ const EdiCatygory = () => {
   const { mutate } = useEditCatygory(id);
   const { data, isLoading } = useGetEditCatygory(id as string);
   const { mutate: subDelete } = useDelete();
-  const { data: subdata, isLoading: subloding } = useGetSubCatygory();
+  const { data: subData, isLoading: subloding } = useGetSubCatygory();
 
   const editSubdata = data?.children?.map((item) => ({
     key: item.id,

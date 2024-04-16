@@ -12,11 +12,11 @@ function App() {
         <Route path="/" element={<Login />} />
 
         <Route path="/home" element={<MainLayout />}>
-          {Main_pages.map((route) => (
+          {Main_pages.map(({ component: Component, path }) => (
             <Route
-              key={route.path || "/"}
-              path={route.path || "/"}
-              element={route.component}
+              key={path || "/"}
+              path={path || "/"}
+              element={<Component />}
             />
           ))}
         </Route>

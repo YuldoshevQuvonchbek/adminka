@@ -1,17 +1,17 @@
 import React, { useState } from "react";
 import { Button, Image, Popconfirm, Spin, Table, message } from "antd";
+import { useGetBanner } from "./service/query/useGetBanner";
 import { Link } from "react-router-dom";
 import { DeleteOutlined, EditOutlined } from "@ant-design/icons";
+
 import { useNavigate } from "react-router-dom";
-import { useGetProductData } from "../service/query/useGetProductData";
-import { useProductDelete } from "../service/mutation/useProductDelete";
+import { useDeleteBanner } from "./service/mutation/useDelete";
 
-const ProductList: React.FC = () => {
+const BannerList: React.FC = () => {
   const navigete = useNavigate();
-  const { data, isLoading } = useGetProductData();
-
+  const { data, isLoading } = useGetBanner();
   const [deletestate, setDeletestate] = useState<number[]>([]);
-  const { mutate, isPending } = useProductDelete();
+  const { mutate, isPending } = useDeleteBanner();
   const Deletenotify = () => message.success("Malumot o'chirildi");
 
   const del = (id: number) => {
@@ -23,7 +23,7 @@ const ProductList: React.FC = () => {
     });
   };
   const edit = (id: number) => {
-    navigete(`/home/editProduct/${id}`);
+    navigete(`/home/bannerEdit/${id}`);
   };
 
   const columns = [
@@ -69,10 +69,7 @@ const ProductList: React.FC = () => {
     title: item.title,
     id: item.id,
     key: item.id,
-    price: item.price,
     image: item.image,
-    is_available: item.is_available,
-    is_new: item.is_new,
   }));
 
   const fillterData = product
@@ -80,11 +77,11 @@ const ProductList: React.FC = () => {
     : [];
   return (
     <>
-      {isLoading || isPending ? (
+      {isLoading ? (
         <Spin fullscreen size="large" />
       ) : (
         <>
-          <Link to={"/home/productCreate"}>
+          <Link to={"/home/bannerCreate"}>
             <Button type="primary" style={{ marginBottom: 16 }}>
               Create
             </Button>
@@ -96,4 +93,4 @@ const ProductList: React.FC = () => {
   );
 };
 
-export default ProductList;
+export default BannerList;
