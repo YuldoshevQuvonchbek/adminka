@@ -57,10 +57,12 @@ const EditProduct = () => {
     });
   };
 
-  const selectMapdata = SUBdata?.results.map<selectMapDataType>((item) => ({
-    value: item.id,
-    label: <span>{item.title}</span>,
-  }));
+  const selectMapdata = SUBdata?.data.results.map<selectMapDataType>(
+    (item) => ({
+      value: item.id,
+      label: <span>{item.title}</span>,
+    })
+  );
   return (
     <>
       {isLoading ? (

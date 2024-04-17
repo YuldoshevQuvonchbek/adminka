@@ -65,6 +65,7 @@ const SubAttribute: React.FC = () => {
   const fillterData = product
     ? product.filter((item) => !deletestate.includes(item.id))
     : [];
+
   return (
     <>
       {isLoading || isPending ? (

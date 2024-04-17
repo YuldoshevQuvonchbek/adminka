@@ -16,10 +16,19 @@ export interface DataTypeBanner {
   count: number;
   results: BannerListdataType[];
 }
-export const useGetBanner = () => {
+export const useGetBanner = (id: string = "id", page: number = 1) => {
   return useQuery({
-    queryKey: ["banner"],
+    queryKey: ["banner", id, page],
     queryFn: () =>
-      request.get<DataTypeBanner>("/banner/").then((res) => res.data),
+      request
+        .get<DataTypeBanner>(`/banner/?ordering=${id}`, {
+          params: { offset: page, limit: 5 },
+        })
+        .then((res) => {
+          return {
+            data: res.data,
+            pageSize: Math.ceil(res.data.count),
+          };
+        }),
   });
 };

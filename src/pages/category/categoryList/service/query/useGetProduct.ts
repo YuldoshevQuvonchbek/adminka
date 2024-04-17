@@ -15,9 +15,20 @@ export interface DataType {
   count: number;
   results: CatigoryList[];
 }
-export const useGetProduct = () => {
+
+export const useGetProduct = (id: string = "id", page: number = 1) => {
   return useQuery({
-    queryKey: ["category"],
-    queryFn: () => request.get<DataType>("/category/").then((res) => res.data),
+    queryKey: ["category", id, page],
+    queryFn: () =>
+      request
+        .get<DataType>(`/category/?ordering=${id}`, {
+          params: { offset: page, limit: 5 },
+        })
+        .then((res) => {
+          return {
+            Catygorydata: res.data,
+            pageSize: Math.ceil(res.data.count),
+          };
+        }),
   });
 };

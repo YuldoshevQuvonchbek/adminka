@@ -8,7 +8,7 @@ export interface DataTypeAtrebute {
   results: {
     id: number;
     title: string;
-    category: {}[];
+    key?: number;
   }[];
 }
 

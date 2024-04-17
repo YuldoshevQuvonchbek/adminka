@@ -14,9 +14,19 @@ interface brandType {
   ];
 }
 
-export const useGetBrand = () => {
+export const useGetBrand = (id: string = "id", page: number = 1) => {
   return useQuery({
-    queryKey: ["brand"],
-    queryFn: () => request.get<brandType>("/brand/").then((res) => res.data),
+    queryKey: ["brand", id, page],
+    queryFn: () =>
+      request
+        .get<brandType>(`/brand/?ordering=${id}`, {
+          params: { offset: page, limit: 5 },
+        })
+        .then((res) => {
+          return {
+            data: res.data,
+            pageSize: Math.ceil(res.data.count),
+          };
+        }),
   });
 };

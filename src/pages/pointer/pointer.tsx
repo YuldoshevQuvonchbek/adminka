@@ -39,7 +39,7 @@ const Pointer: React.FC = () => {
                   <Card bordered={false}>
                     <Statistic
                       title="All Sub Catygory"
-                      value={subData?.count}
+                      value={subData?.data?.count}
                       valueStyle={{ color: "#cf1322" }}
                       prefix={<UnorderedListOutlined />}
                     />
@@ -51,7 +51,7 @@ const Pointer: React.FC = () => {
                   <Card bordered={false}>
                     <Statistic
                       title="All Brand"
-                      value={brantData?.count}
+                      value={brantData?.data?.count}
                       valueStyle={{ color: "#cfdb31" }}
                       prefix={<UnorderedListOutlined />}
                     />
@@ -62,7 +62,7 @@ const Pointer: React.FC = () => {
                 <Link to={"/home/subAttribute"}>
                   <Card bordered={false}>
                     <Statistic
-                      title="All Brand"
+                      title="All atribute"
                       value={AtrebutData?.count}
                       valueStyle={{ color: "#2956b0" }}
                       prefix={<UnorderedListOutlined />}
