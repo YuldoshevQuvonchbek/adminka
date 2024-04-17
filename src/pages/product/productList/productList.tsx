@@ -131,7 +131,7 @@ const ProductList: React.FC = () => {
           <div className="search_contianer">
             <Link to={"/home/productCreate"}>
               <Button type="primary" style={{ marginBottom: 16 }}>
-                Create
+                Create New Product
               </Button>
             </Link>
 

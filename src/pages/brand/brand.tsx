@@ -122,7 +122,7 @@ const Brand = () => {
           <div className="search_contianer">
             <Link to={"/home/brandCrate"}>
               <Button type="primary" style={{ marginBottom: 16 }}>
-                Create
+                Create New Brand
               </Button>
             </Link>
             <Button onClick={showModal}>
