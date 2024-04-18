@@ -10,7 +10,7 @@ import Brand from "../pages/brand/brand";
 import BrandCrate from "../pages/brand/brand-Create/brand-Crate";
 import BandEdit from "../pages/brand/brand-edit/brandEdit";
 import SubCatygoryCreate from "../pages/category/subCatygory/subCatygoryCreate/subCatygoryCreate";
-import SubAttribute from "../pages/category/subCatygory/subAttribute/subAttribute";
+// import SubAttribute from "../pages/category/subCatygory/subAttribute/subAttribute";
 import ProductList from "../pages/product/productList/productList";
 import ProductCreate from "../pages/product/productCreate/productCreate";
 import EditSubcatygory from "../pages/category/subCatygory/edit-subcotygory/edit_subcatygory";
@@ -74,10 +74,10 @@ export const Main_pages: routerType[] = [
     component: SubCatygoryCreate,
     path: "subCatygoryCreate",
   },
-  {
-    component: SubAttribute,
-    path: "subAttribute",
-  },
+  // {
+  //   component: SubAttribute,
+  //   path: "subAttribute",
+  // },
   {
     component: ProductList,
     path: "productList",
