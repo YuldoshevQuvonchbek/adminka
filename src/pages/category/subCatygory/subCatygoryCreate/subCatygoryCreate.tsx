@@ -68,10 +68,11 @@ const SubCatygoryCreate = () => {
     });
   };
 
-  const selectMapdata = data?.results.map<selectMapDataType>((item) => ({
+  const selectMapdata = data?.results?.map<selectMapDataType>((item) => ({
     value: item.id,
     label: <span>{item.title}</span>,
   }));
+  console.log(selectMapdata);
 
   const items: TabsProps["items"] = [
     {

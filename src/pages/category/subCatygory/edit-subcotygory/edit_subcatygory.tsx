@@ -56,7 +56,10 @@ const EditSubcatygory = () => {
         }),
       };
     });
-    const forAttribute = { attributes, category_id: catygoryData?.id };
+    const forAttribute = {
+      attributes,
+      category_id: catygoryData?.id,
+    };
 
     editAttr(forAttribute, {
       onSuccess: (response) => {

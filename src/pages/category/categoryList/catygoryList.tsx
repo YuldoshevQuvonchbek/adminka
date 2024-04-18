@@ -45,7 +45,6 @@ const CatygoryList: React.FC = () => {
   const [pagination, setPagination] = useState(1);
   const { data, isLoading } = useGetProduct("id", page);
   const [deletestate, setDeletestate] = useState<number[]>([]);
-
   const [search, setSeach] = useState("");
   const { data: searchData } = useSearchCatygory(search);
 

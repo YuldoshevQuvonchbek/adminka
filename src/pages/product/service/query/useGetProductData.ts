@@ -28,7 +28,7 @@ export const useGetProductData = (id: string = "id", page: number = 1) => {
         })
         .then((res) => {
           return {
-            data: res.data,
+            data: res?.data,
             pageSize: Math.ceil(res.data.count),
           };
         }),

@@ -26,8 +26,8 @@ export const useGetProduct = (id: string = "id", page: number = 1) => {
         })
         .then((res) => {
           return {
-            Catygorydata: res.data,
-            pageSize: Math.ceil(res.data.count),
+            Catygorydata: res?.data,
+            pageSize: Math.ceil(res?.data?.count),
           };
         }),
   });

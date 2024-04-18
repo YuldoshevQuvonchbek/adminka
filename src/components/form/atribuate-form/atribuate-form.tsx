@@ -5,9 +5,6 @@ import { useAtrebuteDelete } from "../../../pages/category/subCatygory/subAttrib
 import { useAtrebuteDeleteValue } from "../../../pages/category/subCatygory/subAttribute/service/mutation/useAtrebuteDeleteValue";
 
 export interface AtribuateType {
-  // title: string;
-  // category: number[];
-  // values: [];
   attributes: {
     attribute_id: null;
     title: string;
@@ -16,7 +13,7 @@ export interface AtribuateType {
       value_id: null;
     }[];
   }[];
-  category_id: string;
+  category_id?: string | number | undefined;
 }
 interface AtribuateFormType {
   atribuaterSubmit: (data: any) => void;
@@ -45,20 +42,20 @@ const SubAttributeForm: React.FC<AtribuateFormType> = ({
   const deleteValue = (id: number) => {
     mutate(id, {
       onSuccess: () => {
-        message.success("Successfully deleted!");
+        message.success("Uchirildi :)");
       },
       onError: () => {
-        message.error("Error!");
+        message.error("Error :(");
       },
     });
   };
   const deleteAttributeMe = (id: number) => {
     deleteAttribute(id, {
       onSuccess: () => {
-        message.success("Successfully deleted!");
+        message.success("Uchirildi :)");
       },
       onError: () => {
-        message.error("Error!");
+        message.error("Error :(");
       },
     });
   };

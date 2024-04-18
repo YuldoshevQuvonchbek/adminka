@@ -20,7 +20,7 @@ interface Props {
 }
 
 export interface FildTypeCategory {
-  category_id: number;
+  category_id: string;
   title: string;
   image?: {
     file: File;

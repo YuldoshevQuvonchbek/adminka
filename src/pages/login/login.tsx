@@ -16,7 +16,7 @@ const Login: React.FC = () => {
 
   const onFinish = (values: FieldType) => {
     mutate(values, {
-      onSuccess: (data: any) => {
+      onSuccess: (data) => {
         saveState("user", data);
         naviget("/home/pointer");
       },
